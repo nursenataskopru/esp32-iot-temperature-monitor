@@ -205,13 +205,3 @@ The `wokwi-project.txt` file contains a direct link and additional hints:
 Downloaded from https://wokwi.com/projects/425066481839851521
 Simulate this project on https://wokwi.com/
 ```
-
----
-
-## License
-
-This project is released under the [MIT License](LICENSE). Feel free to reuse, modify, and distribute as needed.
-
----
-
-**Enjoy building your ESP32 IoT Temperature & Humidity Monitor!**
