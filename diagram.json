@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Nursena",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 86.4, "left": -23.96, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -38.1, "left": -139.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -70.4,
+      "left": -42.4,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 111.6, "left": 167, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 215.15,
+      "left": 153.6,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "v38.4", "h38.4", "v38.4" ] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v163.2", "h76.8" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-19.2", "v124.8", "h144" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "h-28.8", "v134.5", "h0" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-19.2", "v0.2", "h9.6", "v96", "h134.4", "v86.4" ] ],
+    [ "lcd1:SCL", "esp:22", "green", [ "h-38.4", "v77.1", "h172.8", "v67.2" ] ],
+    [ "dht1:DATA", "esp:0", "green", [ "v230.4", "h201.7", "v-67.2" ] ],
+    [ "esp:12", "r1:1", "green", [ "v0", "h-38.25", "v86.4", "h163.2", "v-86.4" ] ],
+    [ "r1:2", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.3", "green", [ "v19.2", "h-86" ] ]
+  ],
+  "dependencies": {}
+}
